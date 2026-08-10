@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Rank do Grupo</title>
 
 <style>
@@ -13,19 +15,21 @@
 body {
     margin: 0;
     min-height: 100vh;
+
     background:
         radial-gradient(circle at top, #26345c 0%, #0b1020 45%, #05070d 100%);
+
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-    width: min(1080px, 94%);
+    width: min(1050px, 94%);
     margin: auto;
     padding: 40px 0;
 }
 
-/* CABEÇALHO */
+/* HEADER */
 
 .header {
     text-align: center;
@@ -33,67 +37,89 @@ body {
 }
 
 .title {
-    font-size: clamp(36px, 6vw, 62px);
+    font-size: clamp(38px, 6vw, 62px);
     font-weight: 900;
     color: #ffd700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, .35);
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.35);
 }
 
 .subtitle {
-    margin-top: 10px;
-    font-size: 24px;
-    color: #bfc7dc;
+    margin-top: 8px;
+    color: #aeb8d0;
+    font-size: 23px;
 }
 
-/* JOGADOR */
+/* RANKING */
+
+#ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
 .player {
     display: flex;
     align-items: center;
-    gap: 20px;
 
-    width: 100%;
-    min-height: 120px;
+    min-height: 115px;
 
-    margin-bottom: 16px;
-    padding: 18px 24px;
+    padding: 17px 23px;
 
-    background: rgba(21, 27, 46, .95);
+    background: rgba(21,27,46,.96);
+
     border: 1px solid #35405f;
     border-radius: 22px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+    transition: transform .2s;
 }
+
+.player:hover {
+    transform: translateY(-3px);
+}
+
+/* POSIÇÃO */
 
 .position {
     width: 65px;
+
     text-align: center;
-    font-size: 34px;
-    font-weight: bold;
+
+    font-size: 32px;
+    font-weight: 900;
 }
 
 /* AVATAR */
 
-.avatar-wrapper {
-    width: 82px;
-    height: 82px;
+.avatar-box {
+    width: 78px;
+    height: 78px;
+
+    margin-right: 20px;
+
     flex-shrink: 0;
 }
 
 .avatar {
-    width: 82px;
-    height: 82px;
+    width: 78px;
+    height: 78px;
 
     border-radius: 50%;
+
     object-fit: cover;
 
-    background: #34405e;
-    border: 3px solid #536386;
+    border: 3px solid #526184;
+
+    background: #303a58;
 }
 
 .initial {
-    width: 82px;
-    height: 82px;
+    width: 78px;
+    height: 78px;
 
     border-radius: 50%;
 
@@ -101,10 +127,11 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 900;
+
+    background:
+        linear-gradient(135deg,#2563eb,#7c3aed);
 }
 
 /* INFORMAÇÕES */
@@ -115,13 +142,15 @@ body {
 }
 
 .name {
-    font-size: 30px;
-    font-weight: 800;
+    font-size: 29px;
+    font-weight: 900;
 }
 
 .level {
     margin-top: 7px;
-    font-size: 20px;
+
+    font-size: 19px;
+
     color: #b8c1d9;
 }
 
@@ -134,97 +163,109 @@ body {
 
 .xp {
     font-size: 30px;
+
     font-weight: 900;
+
     color: #ffd700;
 }
 
 .unit {
     margin-top: 3px;
-    font-size: 14px;
-    color: #8e98b2;
+
+    font-size: 13px;
+
+    color: #8993ad;
 }
 
-/* DESTAQUES */
+/* TOP 3 */
 
-.player:nth-of-type(2) {
+.player:nth-child(1) {
     border-color: #ffd700;
 }
 
-.player:nth-of-type(3) {
+.player:nth-child(2) {
     border-color: #c0c0c0;
 }
 
-.player:nth-of-type(4) {
+.player:nth-child(3) {
     border-color: #cd7f32;
 }
 
-/* RODAPÉ */
+/* FOOTER */
 
 .footer {
     margin-top: 30px;
-    padding: 24px;
+
+    padding: 22px;
 
     text-align: center;
 
-    background: rgba(17, 23, 42, .95);
+    background: rgba(17,23,42,.95);
+
     border-radius: 20px;
 
     color: #aab3c9;
-    font-size: 19px;
+
+    font-size: 18px;
 }
 
 .warning {
     margin-top: 8px;
+
     color: #ff7777;
 }
 
-/* CELULAR */
+/* MOBILE */
 
-@media (max-width: 650px) {
+@media(max-width:650px) {
 
     .container {
         padding: 20px 0;
     }
 
     .player {
-        gap: 12px;
-        padding: 14px;
+        padding: 13px;
+        gap: 10px;
     }
 
     .position {
-        width: 35px;
-        font-size: 24px;
+        width: 30px;
+        font-size: 22px;
     }
 
-    .avatar-wrapper,
+    .avatar-box,
     .avatar,
     .initial {
-        width: 60px;
-        height: 60px;
+        width: 58px;
+        height: 58px;
     }
 
     .initial {
-        font-size: 27px;
+        font-size: 25px;
+    }
+
+    .avatar-box {
+        margin-right: 5px;
     }
 
     .name {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .level {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .points {
-        min-width: 65px;
+        min-width: 60px;
     }
 
     .xp {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .unit {
-        font-size: 10px;
+        font-size: 9px;
     }
 }
 </style>
@@ -235,310 +276,265 @@ body {
 <div class="container">
 
     <div class="header">
-        <div class="title">🏆 RANK DO GRUPO</div>
-        <div class="subtitle">Sistema de Patentes</div>
-    </div>
 
-
-    <!-- DAVI -->
-
-    <div class="player">
-
-        <div class="position">🥇</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_davi}}"
-                alt="Avatar de Davi"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">D</div>
+        <div class="title">
+            🏆 RANK DO GRUPO
         </div>
 
-        <div class="info">
-            <div class="name">Davi</div>
-            <div class="level">👑 CHEFE</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_davi}}</div>
-            <div class="unit">PONTOS</div>
+        <div class="subtitle">
+            Sistema de Patentes
         </div>
 
     </div>
 
 
-    <!-- MATEUS -->
+    <!-- O JAVASCRIPT VAI COLOCAR OS JOGADORES AQUI -->
 
-    <div class="player">
-
-        <div class="position">🥈</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_eu}}"
-                alt="Avatar de Mateus"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">M</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Mateus</div>
-            <div class="level">💪 CAPANGA</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_eu}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- MARLON -->
-
-    <div class="player">
-
-        <div class="position">🥉</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_marlon}}"
-                alt="Avatar de Marlon"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">M</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Marlon</div>
-            <div class="level">💪 CAPANGA</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_marlon}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- NICOly -->
-
-    <div class="player">
-
-        <div class="position">4</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_nicoly}}"
-                alt="Avatar de Nicoly"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">N</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Nicoly</div>
-            <div class="level">⭐ BETINHA SUPREMO</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_nicoly}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- ANALICE -->
-
-    <div class="player">
-
-        <div class="position">5</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_analice}}"
-                alt="Avatar de Analice"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">A</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Analice</div>
-            <div class="level">⭐ BETINHA SUPREMO</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_analice}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- RYAN -->
-
-    <div class="player">
-
-        <div class="position">6</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_ryan}}"
-                alt="Avatar de Ryan"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">R</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Ryan</div>
-            <div class="level">⭐ BETINHA SUPREMO</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_ryan}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- FELIPE -->
-
-    <div class="player">
-
-        <div class="position">7</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_felipe}}"
-                alt="Avatar de Felipe"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">F</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Felipe</div>
-            <div class="level">⭐ BETINHA SUPREMO</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_felipe}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- ARMIN -->
-
-    <div class="player">
-
-        <div class="position">8</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_armin}}"
-                alt="Avatar de Armin"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">A</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Armin</div>
-            <div class="level">⭐ BETINHA SUPREMO</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_armin}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- DANIEL -->
-
-    <div class="player">
-
-        <div class="position">9</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_daniel}}"
-                alt="Avatar de Daniel"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">D</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Daniel</div>
-            <div class="level">⭐ BETINHA SUPREMO</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_daniel}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
-
-
-    <!-- JULIA -->
-
-    <div class="player">
-
-        <div class="position">10</div>
-
-        <div class="avatar-wrapper">
-            <img
-                class="avatar"
-                src="{{avatar_julia}}"
-                alt="Avatar de Julia"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="initial" style="display:none;">J</div>
-        </div>
-
-        <div class="info">
-            <div class="name">Julia</div>
-            <div class="level">⭐ BETINHA SUPREMO</div>
-        </div>
-
-        <div class="points">
-            <div class="xp">{{pontos_julia}}</div>
-            <div class="unit">PONTOS</div>
-        </div>
-
-    </div>
+    <div id="ranking"></div>
 
 
     <div class="footer">
+
         ⚡ 10 pontos perdidos = rebaixamento de nível
 
         <div class="warning">
             O ranking é atualizado conforme a pontuação.
         </div>
+
     </div>
 
 </div>
+
+
+<script>
+
+/*
+====================================================
+DADOS DO RANKING
+====================================================
+
+Para alterar os pontos, altere somente "pontos".
+
+Para colocar uma foto:
+avatar: "https://site.com/foto.jpg"
+
+Se deixar avatar vazio:
+avatar: ""
+
+o sistema mostra automaticamente
+a primeira letra do nome.
+*/
+
+const jogadores = [
+
+    {
+        nome: "Davi",
+        pontos: 1000,
+        avatar: "",
+        patente: "👑 CHEFE"
+    },
+
+    {
+        nome: "Mateus",
+        pontos: 100,
+        avatar: "",
+        patente: "💪 CAPANGA"
+    },
+
+    {
+        nome: "Marlon",
+        pontos: 100,
+        avatar: "",
+        patente: "💪 CAPANGA"
+    },
+
+    {
+        nome: "Nicoly",
+        pontos: 10,
+        avatar: "",
+        patente: "⭐ BETINHA SUPREMO"
+    },
+
+    {
+        nome: "Analice",
+        pontos: 10,
+        avatar: "",
+        patente: "⭐ BETINHA SUPREMO"
+    },
+
+    {
+        nome: "Ryan",
+        pontos: 10,
+        avatar: "",
+        patente: "⭐ BETINHA SUPREMO"
+    },
+
+    {
+        nome: "Felipe",
+        pontos: 10,
+        avatar: "",
+        patente: "⭐ BETINHA SUPREMO"
+    },
+
+    {
+        nome: "Armin",
+        pontos: 10,
+        avatar: "",
+        patente: "⭐ BETINHA SUPREMO"
+    },
+
+    {
+        nome: "Daniel",
+        pontos: 10,
+        avatar: "",
+        patente: "⭐ BETINHA SUPREMO"
+    },
+
+    {
+        nome: "Julia",
+        pontos: 10,
+        avatar: "",
+        patente: "⭐ BETINHA SUPREMO"
+    }
+
+];
+
+
+/*
+====================================================
+ORDENAÇÃO
+====================================================
+*/
+
+jogadores.sort((a, b) => b.pontos - a.pontos);
+
+
+/*
+====================================================
+GERAR RANKING
+====================================================
+*/
+
+const ranking = document.getElementById("ranking");
+
+
+jogadores.forEach((jogador, index) => {
+
+    const card = document.createElement("div");
+
+    card.className = "player";
+
+
+    /*
+    POSIÇÃO
+    */
+
+    let posicao;
+
+    if (index === 0) {
+        posicao = "🥇";
+    }
+    else if (index === 1) {
+        posicao = "🥈";
+    }
+    else if (index === 2) {
+        posicao = "🥉";
+    }
+    else {
+        posicao = index + 1;
+    }
+
+
+    /*
+    AVATAR
+    */
+
+    const primeiraLetra =
+        jogador.nome.charAt(0).toUpperCase();
+
+
+    let avatarHTML;
+
+
+    if (jogador.avatar) {
+
+        avatarHTML = `
+            <img
+                class="avatar"
+                src="${jogador.avatar}"
+                alt="Avatar de ${jogador.nome}"
+                onerror="this.style.display='none';
+                this.nextElementSibling.style.display='flex';"
+            >
+
+            <div
+                class="initial"
+                style="display:none;"
+            >
+                ${primeiraLetra}
+            </div>
+        `;
+
+    } else {
+
+        avatarHTML = `
+            <div class="initial">
+                ${primeiraLetra}
+            </div>
+        `;
+
+    }
+
+
+    /*
+    CARD
+    */
+
+    card.innerHTML = `
+
+        <div class="position">
+            ${posicao}
+        </div>
+
+        <div class="avatar-box">
+
+            ${avatarHTML}
+
+        </div>
+
+        <div class="info">
+
+            <div class="name">
+                ${jogador.nome}
+            </div>
+
+            <div class="level">
+                ${jogador.patente}
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                ${jogador.pontos}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    `;
+
+
+    ranking.appendChild(card);
+
+});
+
+
+</script>
 
 </body>
 </html>
