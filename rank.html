@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 1080px;
+    min-height: 1350px;
+    background: #080b16;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding: 45px;
+}
+
+/* CABEÇALHO */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.title {
+    font-size: 58px;
+    font-weight: 900;
+    color: #ffd700;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 27px;
+    color: #bfc5d6;
+}
+
+/* JOGADOR */
+
+.player {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 125px;
+
+    margin-bottom: 18px;
+    padding: 18px 25px;
+
+    background: #151b2e;
+    border: 2px solid #29324d;
+    border-radius: 24px;
+}
+
+/* POSIÇÃO */
+
+.position {
+    width: 80px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* AVATAR */
+
+.avatar {
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    margin: 0 25px;
+
+    background: #303a5a;
+}
+
+/* NOME */
+
+.info {
+    flex: 1;
+}
+
+.name {
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.level {
+    margin-top: 8px;
+    font-size: 23px;
+    color: #aeb7d1;
+}
+
+/* XP */
+
+.points {
+    text-align: right;
+}
+
+.xp {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.unit {
+    font-size: 18px;
+    color: #929ab2;
+}
+
+/* RODAPÉ */
+
+.footer {
+    margin-top: 35px;
+    padding: 25px;
+
+    text-align: center;
+
+    background: #11172a;
+    border-radius: 20px;
+
+    color: #9da6bd;
+    font-size: 22px;
+}
+
+.warning {
+    margin-top: 10px;
+    color: #ff6b6b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="title">🏆 RANK DO GRUPO</div>
+
+        <div class="subtitle">
+            Sistema de Patentes
+        </div>
+    </div>
+
+
+    <!-- 1 -->
+
+    <div class="player">
+
+        <div class="position">🥇</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_davi}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Davi
+            </div>
+
+            <div class="level">
+                👑 CHEFE
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_davi}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 2 -->
+
+    <div class="player">
+
+        <div class="position">🥈</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_eu}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Mateus
+            </div>
+
+            <div class="level">
+                💪CAPANGA
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_eu}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 3 -->
+
+    <div class="player">
+
+        <div class="position">🥉</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_marlon}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Marlon
+            </div>
+
+            <div class="level">
+                💪 CAPANGA
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_marlon}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 4 -->
+
+    <div class="player">
+
+        <div class="position">4</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_nicoly}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Nicoly
+            </div>
+
+            <div class="level">
+                ⭐ BETINHA SUPREMO
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_nicoly}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 5 -->
+
+    <div class="player">
+
+        <div class="position">5</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_analice}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Analice
+            </div>
+
+            <div class="level">
+                ⭐ BETINHA SUPREMO
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_analice}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 6 -->
+
+    <div class="player">
+
+        <div class="position">6</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_ryan}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Ryan
+            </div>
+
+            <div class="level">
+                ⭐ BETINHA SUPREMO
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_ryan}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 7 -->
+
+    <div class="player">
+
+        <div class="position">7</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_felipe}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Felipe
+            </div>
+
+            <div class="level">
+                ⭐ BETINHA SUPREMO
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_felipe}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 8 -->
+
+    <div class="player">
+
+        <div class="position">8</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_armin}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Armin
+            </div>
+
+            <div class="level">
+                ⭐ BETINHA SUPREMO
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_armin}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 9 -->
+
+    <div class="player">
+
+        <div class="position">9</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_daniel}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Daniel
+            </div>
+
+            <div class="level">
+                ⭐ BETINHA SUPREMO
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_daniel}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 10 -->
+
+    <div class="player">
+
+        <div class="position">10</div>
+
+        <img
+            class="avatar"
+            src="{{avatar_julia}}"
+        >
+
+        <div class="info">
+
+            <div class="name">
+                Julia
+            </div>
+
+            <div class="level">
+                ⭐ BETINHA SUPREMO
+            </div>
+
+        </div>
+
+        <div class="points">
+
+            <div class="xp">
+                {{pontos_julia}}
+            </div>
+
+            <div class="unit">
+                PONTOS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        ⚡ 10 pontos perdidos = rebaixamento de nível
+
+        <div class="warning">
+            O ranking é atualizado conforme a pontuação.
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
